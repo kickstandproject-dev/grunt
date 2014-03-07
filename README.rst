@@ -6,6 +6,28 @@ development environment.
 
 * `Official Grunt documentation <https://grunt.readthedocs.org>`
 
+Quick Start
+===========
+
+Install Ubuntu 12.04
+--------------------
+
+We recommend using a minimal install of Ubuntu in a VM if this is your first time.
+
+Download Grunt
+--------------
+
+    git clone https://github.com/kickstandproject-dev/grunt
+
+The ``grunt`` repo contains a script that install and configure KickstandProject.
+
+Start the Install
+-----------------
+
+    cd grunt; ./go.sh
+
+It takes a few minutes for everything to complete.
+
 License
 =======
 
