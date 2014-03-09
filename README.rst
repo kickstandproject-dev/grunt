@@ -24,7 +24,7 @@ The ``grunt`` repo contains a script that install and configure KickstandProject
 Start the Install
 -----------------
 
-    cd grunt; ./go.sh
+    cd grunt; ./grunt.sh
 
 It takes a few minutes for everything to complete.
 
