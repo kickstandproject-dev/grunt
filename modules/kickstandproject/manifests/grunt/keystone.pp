@@ -12,28 +12,27 @@ class kickstandproject::grunt::keystone(
 
   $sql_conn = "mysql://${db_user}:${db_password}@${db_host}/${db_name}"
 
-  class { '::keystone':
-    admin_token    => 'ADMIN',
-    sql_connection => $sql_conn,
-  }
-
-  class { '::keystone::roles::admin':
-    admin_tenant => 'grunt',
-    email        => 'grunt@localhost',
-    password     => 'grunt',
-  }
-
-  class { '::keystone::endpoint':
-    admin_address    => $::ipaddress,
-    internal_address => $::ipaddress,
-    public_address   => $::ipaddress,
-  }
-
   class { '::keystone::db::mysql':
     dbname   => $db_name,
     host     => $db_host,
     password => $db_password,
     user     => $db_user,
+  }
+
+  class { '::keystone':
+    admin_token    => 'ADMIN',
+    require        => Class['::keystone::db::mysql'],
+    sql_connection => $sql_conn,
+  }->
+  class { '::keystone::roles::admin':
+    admin_tenant => 'grunt',
+    email        => 'grunt@localhost',
+    password     => 'grunt',
+  }->
+  class { '::keystone::endpoint':
+    admin_address    => $::ipaddress,
+    internal_address => $::ipaddress,
+    public_address   => $::ipaddress,
   }
 }
 
