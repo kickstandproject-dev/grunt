@@ -9,7 +9,9 @@ class kickstandproject::grunt::init {
   }
 
   class { 'kickstandproject::grunt::database': }
+  class { 'kickstandproject::grunt::dependencies': }
   class { 'kickstandproject::grunt::keystone': }
+  class { 'kickstandproject::grunt::ripcord::init': }
 }
 
 # vim:sw=2:ts=2:expandtab
