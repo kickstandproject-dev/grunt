@@ -3,9 +3,12 @@ forge "http://forge.puppetlabs.com"
 mod 'kickstandproject/apt',
   :git => 'git://github.com/kickstandproject/kickstandproject-apt.git'
 
+mod 'openstack-infra/vcsrepo',
+  :git => 'git://github.com/openstack-infra/puppet-vcsrepo.git'
+
 mod 'puppetlabs/keystone',
   :git => 'git://github.com/stackforge/puppet-keystone.git',
-  :ref => '2.1.0'
+  :ref => 'stable/havana'
 
 mod 'puppetlabs/inifile',
   :git => 'git://github.com/puppetlabs/puppetlabs-inifile.git',
