@@ -12,6 +12,7 @@ class kickstandproject::grunt::init {
   class { 'kickstandproject::grunt::dependencies': }
   class { 'kickstandproject::grunt::keystone': }
   class { 'kickstandproject::grunt::ripcord::init': }
+  class { 'kickstandproject::grunt::wildcard::init': }
 }
 
 # vim:sw=2:ts=2:expandtab

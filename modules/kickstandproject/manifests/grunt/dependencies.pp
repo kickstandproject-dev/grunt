@@ -6,6 +6,7 @@
 class kickstandproject::grunt::dependencies {
   $packages = [
     'build-essential',
+    'libffi-dev',
     'python-dev',
     'python-pip',
   ]
