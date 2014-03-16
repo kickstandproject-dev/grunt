@@ -12,7 +12,8 @@ Quick Start
 Install Ubuntu 12.04
 --------------------
 
-We recommend using a minimal install of Ubuntu in a VM if this is your first time.
+We recommend using a minimal install of Ubuntu, with 2GB of RAM, in a VM if
+this is your first time.
 
 Download Grunt
 --------------
