@@ -25,9 +25,9 @@ class kickstandproject::grunt::keystone(
     sql_connection => $sql_conn,
   }->
   class { '::keystone::roles::admin':
-    admin_tenant => 'grunt',
-    email        => 'grunt@localhost',
-    password     => 'grunt',
+    admin_tenant => 'admin',
+    email        => 'admin@localhost',
+    password     => 'admin',
   }->
   class { '::keystone::endpoint':
     admin_address    => $::ipaddress,
