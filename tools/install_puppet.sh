@@ -1,4 +1,8 @@
 #!/bin/bash
+
+wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+python get-pip.py
+
 cat > 00-puppet.pref <<EOF
 Package: puppet puppet-common puppetmaster puppetmaster-common puppetmaster-passenger
 Pin: version 2.7*
