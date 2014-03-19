@@ -26,7 +26,7 @@ class kickstandproject::grunt::wildcard::install(
     source   => $source,
   }
 
-  exec { "pip install -e $path":
+  exec { "pip install --process-dependency-links -e $path":
     refreshonly => true,
   }
 }
