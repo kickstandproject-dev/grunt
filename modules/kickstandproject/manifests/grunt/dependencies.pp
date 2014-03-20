@@ -14,6 +14,12 @@ class kickstandproject::grunt::dependencies {
   package { $packages:
     ensure => present,
   }
+
+  package { 'pip':
+    ensure   => '1.4',
+    provider => pip,
+    require  => Package[$packages],
+  }
 }
 
 # vim:sw=2:ts=2:expandtab
