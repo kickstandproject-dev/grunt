@@ -7,6 +7,8 @@ class kickstandproject::grunt::dependencies {
   $packages = [
     'build-essential',
     'libffi-dev',
+    'libxml2-dev',
+    'libxslt1-dev',
     'python-dev',
     'python-pip',
   ]
