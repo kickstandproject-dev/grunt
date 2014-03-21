@@ -61,6 +61,17 @@ class kickstandproject::grunt::wildcard::config {
     setting => 'DEBUG',
     value   => 'False',
   }
+
+  ini_setting { 'local_settings/KICKSTAND_RIPCORD_BACKEND':
+    ensure  => present,
+    notify  => Class['apache::service'],
+    path    => '/opt/kickstandproject/wildcard/wildcard/local/local_settings.py',
+    require => File['/opt/kickstandproject/wildcard/wildcard/local/local_settings.py'],
+    section => '',
+    setting => 'KICKSTAND_RIPCORD_BACKEND',
+    value   => 'True',
+  }
+
 }
 
 # vim:sw=2:ts=2:expandtab
