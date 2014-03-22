@@ -34,6 +34,27 @@ class kickstandproject::grunt::keystone(
     internal_address => $::ipaddress,
     public_address   => $::ipaddress,
   }
+
+  # Create and assign 'grunt' user to 'grunt' project with '_member_' permissions.
+  keystone_tenant { 'grunt':
+    ensure      => present,
+    enabled     => true,
+    description => 'Tenant for Kickstand Project Grunt',
+  }
+
+  keystone_user { 'grunt':
+    ensure   => present,
+    enabled  => true,
+    tenant   => 'grunt',
+    email    => 'grunt@localhost',
+    password => 'grunt',
+
+  }
+
+  keystone_user_role { 'grunt@grunt':
+    ensure => present,
+    roles  => '_member_',
+  }
 }
 
 # vim:sw=2:ts=2:expandtab
