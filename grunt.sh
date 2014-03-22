@@ -8,4 +8,4 @@ if [ ! -d .modules ]; then
     ./tools/install_modules.sh
 fi
 
-sudo puppet apply --verbose --modulepath='modules:.modules' manifests/site.pp --certname=grunt
+sudo puppet apply --verbose --modulepath='modules:.modules' manifests/site.pp --certname=grunt $@
