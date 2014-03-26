@@ -1,7 +1,7 @@
 Grunt
 =====
 
-Grunt is a set of scripts and utilities to quickly deploy a KickstandProject
+Grunt is a set of scripts and utilities to quickly deploy a Kickstand Project
 development environment.
 
 * `Official Grunt documentation <https://grunt.readthedocs.org>`
