@@ -15,6 +15,9 @@ class kickstandproject::grunt::bootstrap(
 
   file { '/etc/apt/preferences.d/00-puppet.pref':
     ensure => file,
+    group  => 'root',
+    mode   => '0644',
+    owner  => 'root',
     source => 'puppet:///modules/kickstandproject/grunt/etc/apt/preferences.d/00-puppet.pref',
   }
 
