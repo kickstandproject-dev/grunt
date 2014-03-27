@@ -10,13 +10,13 @@ class kickstandproject::grunt::ripcord::install(
 ) {
   vcsrepo { $path:
     ensure   => latest,
-    notify   => Exec["pip install -e $path"],
+    notify   => Exec["pip install -e ${path}"],
     provider => git,
     revision => $revision,
     source   => $source,
   }
 
-  exec { "pip install -e $path":
+  exec { "pip install -e ${path}":
     refreshonly => true,
     require     => Package['pip'],
   }

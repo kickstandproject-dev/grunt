@@ -14,7 +14,7 @@ class kickstandproject::grunt::ripcord::config {
   file { '/etc/ripcord':
     ensure  => directory,
     group   => 'ripcord',
-    mode    => 0644,
+    mode    => '0644',
     owner   => 'ripcord',
     purge   => true,
     recurse => true,

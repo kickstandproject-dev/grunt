@@ -6,7 +6,7 @@
 class kickstandproject::grunt::ripcord::service(
 ) {
   service { 'ripcord-api':
-    ensure => running,
+    ensure  => running,
     require => [
       Class['kickstandproject::grunt::ripcord::config'],
       File['/etc/init/ripcord-api.conf'],

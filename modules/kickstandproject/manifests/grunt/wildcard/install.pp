@@ -18,7 +18,7 @@ class kickstandproject::grunt::wildcard::install(
   vcsrepo { $path:
     ensure   => latest,
     group    => 'wildcard',
-    notify   => Exec["pip install -e $path"],
+    notify   => Exec["pip install -e ${path}"],
     owner    => 'wildcard',
     provider => git,
     require  => User['wildcard'],
@@ -26,7 +26,7 @@ class kickstandproject::grunt::wildcard::install(
     source   => $source,
   }
 
-  exec { "pip install -e $path":
+  exec { "pip install -e ${path}":
     refreshonly => true,
     require     => Package['pip'],
   }
