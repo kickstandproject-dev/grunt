@@ -1,4 +1,4 @@
-Grunt
+Grunt!
 =====
 
 Grunt is a set of scripts and utilities to quickly deploy a Kickstand Project
