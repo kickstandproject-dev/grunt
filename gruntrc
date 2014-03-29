@@ -1,0 +1,2 @@
+# Toggle full debugging for puppet.
+GRUNT_PUPPET_CONFIG_DEBUG=${GRUNT_PUPPET_CONFIG_DEBUG:-false}
