@@ -1,11 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/bash -xe
 
 source gruntrc
 
 PUPPET_ARGS=""
 
 if [[ "$GRUNT_DEBUG" == "True" ]]; then
-    PUPPET_ARGS+="--debug"
+    PUPPET_ARGS+=" --debug"
+fi
+if [[ "$GRUNT_PUPPET_CONFIG_COLOR" != "True" ]]; then
+    PUPPET_ARGS+=" --color=false"
 fi
 
 if [ ! -f /etc/apt/sources.list.d/puppetlabs.list ]; then

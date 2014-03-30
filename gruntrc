@@ -1,2 +1,5 @@
 
 GRUNT_DEBUG=${GRUNT_DEBUG:-True}
+
+# Whether to use colors when logging to the console.
+GRUNT_PUPPET_CONFIG_COLOR=${GRUNT_PUPPET_CONFIG_COLOR:-True}
