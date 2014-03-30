@@ -7,6 +7,9 @@ PUPPET_ARGS=""
 if [[ "$GRUNT_PUPPET_CONFIG_DEBUG" == "true" ]]; then
     PUPPET_ARGS+=" --debug"
 fi
+if [[ "$GRUNT_PUPPET_CONFIG_COLOR" != "true" ]]; then
+    PUPPET_ARGS+=" --color=false"
+fi
 
 if [ ! -f /etc/apt/sources.list.d/puppetlabs.list ]; then
     ./tools/install_puppet.sh

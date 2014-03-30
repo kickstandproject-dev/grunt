@@ -1,2 +1,5 @@
 # Toggle full debugging for puppet.
 GRUNT_PUPPET_CONFIG_DEBUG=${GRUNT_PUPPET_CONFIG_DEBUG:-false}
+
+# Whether to use colors when logging to the console.
+GRUNT_PUPPET_CONFIG_COLOR=${GRUNT_PUPPET_CONFIG_COLOR:-true}
