@@ -4,10 +4,10 @@
 # Paul Belanger <paul.belanger@polybeacon.com>
 #
 class kickstandproject::grunt::keystone(
-  $db_host = '127.0.0.1',
-  $db_name = 'keystone',
-  $db_password = 'keystone',
-  $db_user = 'keystone',
+  $db_host = $::keystone_db_host,
+  $db_name = $::keystone_db_name,
+  $db_password = $::keystone_db_password,
+  $db_user = $::keystone_db_user,
 ) {
 
   $sql_conn = "mysql://${db_user}:${db_password}@${db_host}/${db_name}"
