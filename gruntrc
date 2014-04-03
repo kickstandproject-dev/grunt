@@ -3,3 +3,9 @@ GRUNT_PUPPET_CONFIG_DEBUG=${GRUNT_PUPPET_CONFIG_DEBUG:-false}
 
 # Whether to use colors when logging to the console.
 GRUNT_PUPPET_CONFIG_COLOR=${GRUNT_PUPPET_CONFIG_COLOR:-true}
+
+# class kickstandproject::grunt::keystone
+export FACTER_keystone_db_host=${FACTER_keystone_db_host:-127.0.0.1}
+export FACTER_keystone_db_name=${FACTER_keystone_db_name:-keystone}
+export FACTER_keystone_db_password=${FACTER_keystone_db_password:-keystone}
+export FACTER_keystone_db_user=${FACTER_keystone_db_user:-keystone}
