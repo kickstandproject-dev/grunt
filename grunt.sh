@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash -xe
 
 source gruntrc
 
-PUPPET_ARGS=""
+PUPPET_ARGS="--detailed-exitcodes"
 
 if [[ "$GRUNT_PUPPET_CONFIG_DEBUG" == "true" ]]; then
     PUPPET_ARGS+=" --debug"
@@ -20,3 +20,5 @@ if [ ! -d .modules ]; then
 fi
 
 sudo -E puppet apply --verbose --modulepath='modules:.modules' manifests/site.pp --certname=grunt $PUPPET_ARGS
+
+exit $?
