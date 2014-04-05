@@ -21,6 +21,7 @@ class kickstandproject::grunt::keystone(
 
   class { '::keystone':
     admin_token    => 'ADMIN',
+    enable_ssl     => true,
     require        => Class['::keystone::db::mysql'],
     sql_connection => $sql_conn,
   }->
