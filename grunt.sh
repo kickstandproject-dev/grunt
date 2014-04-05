@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -xe
 
 source gruntrc
 
@@ -20,3 +20,5 @@ if [ ! -d .modules ]; then
 fi
 
 sudo -E puppet apply --verbose --modulepath='modules:.modules' manifests/site.pp --certname=grunt $PUPPET_ARGS
+
+exit $?
