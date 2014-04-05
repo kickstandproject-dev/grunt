@@ -8,6 +8,10 @@ class kickstandproject::grunt::keystone(
   $db_name = $::keystone_db_name,
   $db_password = $::keystone_db_password,
   $db_user = $::keystone_db_user,
+  $grunt_email = $::keystone_grunt_email,
+  $grunt_password = $::keystone_grunt_password,
+  $grunt_tenant = $::keystone_grunt_tenant,
+  $grunt_user = $::keystone_grunt_user,
 ) {
 
   $sql_conn = "mysql://${db_user}:${db_password}@${db_host}/${db_name}"
@@ -35,23 +39,22 @@ class kickstandproject::grunt::keystone(
     public_address   => $::ipaddress,
   }
 
-  # Create and assign 'grunt' user to 'grunt' project with '_member_' permissions.
-  keystone_tenant { 'grunt':
+  keystone_tenant { $grunt_tenant:
     ensure      => present,
     enabled     => true,
     description => 'Tenant for Kickstand Project Grunt',
   }
 
-  keystone_user { 'grunt':
+  keystone_user { $grunt_user:
     ensure   => present,
     enabled  => true,
-    tenant   => 'grunt',
+    tenant   => $grunt_tenant,
     email    => 'grunt@localhost',
-    password => 'grunt',
+    password => $grunt_password,
 
   }
 
-  keystone_user_role { 'grunt@grunt':
+  keystone_user_role { "${grunt_user}@${grunt_tenant}":
     ensure => present,
     roles  => '_member_',
   }

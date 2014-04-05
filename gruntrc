@@ -9,3 +9,8 @@ export FACTER_keystone_db_host=${FACTER_keystone_db_host:-127.0.0.1}
 export FACTER_keystone_db_name=${FACTER_keystone_db_name:-keystone}
 export FACTER_keystone_db_password=${FACTER_keystone_db_password:-keystone}
 export FACTER_keystone_db_user=${FACTER_keystone_db_user:-keystone}
+
+export FACTER_keystone_grunt_email=${FACTER_keystone_grunt_email:-grunt@localhost}
+export FACTER_keystone_grunt_password=${FACTER_keystone_grunt_password:-grunt}
+export FACTER_keystone_grunt_tenant=${FACTER_keystone_grunt_tenant:-grunt}
+export FACTER_keystone_grunt_user=${FACTER_keystone_grunt_user:-grunt}
