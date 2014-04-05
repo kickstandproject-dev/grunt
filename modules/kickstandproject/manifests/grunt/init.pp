@@ -10,6 +10,7 @@ class kickstandproject::grunt::init {
 
   class { 'kickstandproject::grunt::database': }
   class { 'kickstandproject::grunt::dependencies': }
+  class { 'kickstandproject::grunt::fastdraw::init': }
   class { 'kickstandproject::grunt::keystone': }
   class { 'kickstandproject::grunt::ripcord::init': }
   class { 'kickstandproject::grunt::wildcard::init': }
