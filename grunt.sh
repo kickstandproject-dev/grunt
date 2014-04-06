@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash -xe
 
 source gruntrc
 
-PUPPET_ARGS=""
+PUPPET_ARGS="--detailed-exitcodes"
 
 if [[ "$GRUNT_PUPPET_CONFIG_DEBUG" == "true" ]]; then
     PUPPET_ARGS+=" --debug"
@@ -19,4 +19,12 @@ if [ ! -d .modules ]; then
     ./tools/install_modules.sh
 fi
 
+set +e
 sudo -E puppet apply --verbose --modulepath='modules:.modules' manifests/site.pp --certname=grunt $PUPPET_ARGS
+RESULT=$?
+
+# An exit code of '4' means there were failures during the transaction, and an
+# exit code of '6' means there were both changes and failures.
+if [[ $RESULT -gt 2 ]]; then
+    exit $RESULT
+fi
