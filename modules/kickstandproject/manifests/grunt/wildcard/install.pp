@@ -28,7 +28,7 @@ class kickstandproject::grunt::wildcard::install(
 
   exec { "pip install -e ${path}":
     refreshonly => true,
-    require     => Package['pip'],
+    require     => Package['python-pip'],
   }
 }
 
