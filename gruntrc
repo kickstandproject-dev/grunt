@@ -4,6 +4,23 @@ GRUNT_PUPPET_CONFIG_DEBUG=${GRUNT_PUPPET_CONFIG_DEBUG:-false}
 # Whether to use colors when logging to the console.
 GRUNT_PUPPET_CONFIG_COLOR=${GRUNT_PUPPET_CONFIG_COLOR:-true}
 
+# Repositories
+
+# Base GIT Repo URL
+GIT_BASE=${GIT_BASE:-https://github.com}
+
+# fastdraw service
+export FACTER_fastdraw_repo=${FACTER_fastdraw_repo:-${GIT_BASE}/kickstandproject/fastdraw.git}
+export FACTER_fastdraw_branch=${FACTER_fastdraw_branch:-master}
+
+# ripcord service
+export FACTER_ripcord_repo=${FACTER_ripcord_repo:-${GIT_BASE}/kickstandproject/ripcord.git}
+export FACTER_ripcord_branch=${FACTER_ripcord_branch:-master}
+
+# wildcard service
+export FACTER_wildcard_repo=${FACTER_wildcard_repo:-${GIT_BASE}/kickstandproject/wildcard.git}
+export FACTER_wildcard_branch=${FACTER_wildcard_branch:-master}
+
 # class kickstandproject::grunt::keystone
 export FACTER_keystone_db_host=${FACTER_keystone_db_host:-127.0.0.1}
 export FACTER_keystone_db_name=${FACTER_keystone_db_name:-keystone}

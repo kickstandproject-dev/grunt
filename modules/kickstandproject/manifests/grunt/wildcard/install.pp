@@ -5,8 +5,8 @@
 #
 class kickstandproject::grunt::wildcard::install(
   $path = '/opt/kickstandproject/wildcard',
-  $revision = 'master',
-  $source = 'https://github.com/kickstandproject/wildcard.git',
+  $revision = $::wildcard_branch,
+  $source = $::wildcard_repo,
 ) {
   user { 'wildcard':
     ensure     => present,

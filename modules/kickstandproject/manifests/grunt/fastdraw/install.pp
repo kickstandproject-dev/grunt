@@ -5,8 +5,8 @@
 #
 class kickstandproject::grunt::fastdraw::install(
   $path = '/opt/kickstandproject/fastdraw',
-  $revision = 'master',
-  $source = 'https://github.com/kickstandproject/fastdraw.git',
+  $revision = $::fastdraw_branch,
+  $source = $::fastdraw_repo,
 ) {
   vcsrepo { $path:
     ensure   => latest,
