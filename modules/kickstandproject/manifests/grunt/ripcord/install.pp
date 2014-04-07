@@ -5,8 +5,8 @@
 #
 class kickstandproject::grunt::ripcord::install(
   $path = '/opt/kickstandproject/ripcord',
-  $revision = 'master',
-  $source = 'https://github.com/kickstandproject/ripcord.git',
+  $revision = $::ripcord_branch,
+  $source = $::ripcord_repo,
 ) {
   vcsrepo { $path:
     ensure   => latest,
