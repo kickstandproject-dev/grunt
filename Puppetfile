@@ -1,7 +1,7 @@
 forge "http://forge.puppetlabs.com"
 
 mod 'kickstandproject/apt',
-  :git => 'git://github.com/kickstandproject/kickstandproject-apt.git'
+  :git => 'git://github.com/kickstandproject-infra/kickstandproject-apt.git'
 
 mod 'openstack-infra/vcsrepo',
   :git => 'git://github.com/openstack-infra/puppet-vcsrepo.git'
