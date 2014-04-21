@@ -1,14 +1,15 @@
 forge "http://forge.puppetlabs.com"
 
-mod 'kickstandproject/apt',
-  :git => 'git://github.com/kickstandproject-infra/kickstandproject-apt.git'
-
 mod 'openstack-infra/vcsrepo',
   :git => 'git://github.com/openstack-infra/puppet-vcsrepo.git'
 
 mod 'puppetlabs/apache',
   :git => 'git://github.com/puppetlabs/puppetlabs-apache.git',
   :ref => '0.9.0'
+
+mod 'puppetlabs/apt',
+  :git => 'git://github.com/puppetlabs/puppetlabs-apt.git',
+  :ref => '1.4.2'
 
 mod 'puppetlabs/keystone',
   :git => 'git://github.com/stackforge/puppet-keystone.git',
