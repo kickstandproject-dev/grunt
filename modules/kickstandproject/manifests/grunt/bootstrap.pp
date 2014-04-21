@@ -6,11 +6,13 @@
 class kickstandproject::grunt::bootstrap(
   $stage = 'bootstrap',
 ) {
-  apt::function::repository { 'puppetlabs':
-    components => 'main',
-    key        => '4BD6EC30',
-    require    => File['/etc/apt/preferences.d/00-puppet.pref'],
-    url        => 'apt.puppetlabs.com',
+  class { 'apt': }
+
+  apt::source { 'puppetlabs':
+    key      => '4BD6EC30',
+    location => 'http://apt.puppetlabs.com',
+    repos    => 'main',
+    require  => File['/etc/apt/preferences.d/00-puppet.pref'],
   }
 
   file { '/etc/apt/preferences.d/00-puppet.pref':
@@ -21,11 +23,11 @@ class kickstandproject::grunt::bootstrap(
     source => 'puppet:///modules/kickstandproject/grunt/etc/apt/preferences.d/00-puppet.pref',
   }
 
-  apt::function::repository { 'Canonical-Cloud-Archive':
-    components => 'main',
-    dist       => 'precise-updates/havana',
-    key        => 'EC4926EA',
-    url        => 'ubuntu-cloud.archive.canonical.com/ubuntu',
+  apt::source { 'Canonical-Cloud-Archive':
+    key      => 'EC4926EA',
+    location => 'ubuntu-cloud.archive.canonical.com/ubuntu',
+    release  => 'precise-updates/havana',
+    repos    => 'main',
   }
 }
 
