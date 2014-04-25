@@ -8,6 +8,7 @@ class kickstandproject::grunt::init {
     stage => 'bootstrap',
   }
 
+  class { 'kickstandproject::grunt::backblast::init': }
   class { 'kickstandproject::grunt::database': }
   class { 'kickstandproject::grunt::dependencies': }
   class { 'kickstandproject::grunt::fastdraw::init': }
