@@ -9,6 +9,10 @@ GRUNT_PUPPET_CONFIG_COLOR=${GRUNT_PUPPET_CONFIG_COLOR:-true}
 # Base GIT Repo URL
 GIT_BASE=${GIT_BASE:-https://github.com}
 
+# backblast service
+export FACTER_backblast_repo=${FACTER_backblast_repo:-${GIT_BASE}/kickstandproject/backblast.git}
+export FACTER_backblast_branch=${FACTER_backblast_branch:-master}
+
 # fastdraw service
 export FACTER_fastdraw_repo=${FACTER_fastdraw_repo:-${GIT_BASE}/kickstandproject/fastdraw.git}
 export FACTER_fastdraw_branch=${FACTER_fastdraw_branch:-master}
