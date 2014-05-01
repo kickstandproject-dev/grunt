@@ -18,7 +18,7 @@ class kickstandproject::grunt::ripcord::install(
 
   exec { "pip install -e ${path}":
     refreshonly => true,
-    require     => Package['python-pip'],
+    require     => Class[kickstandproject::grunt::dependencies],
   }
 
   file { '/etc/init/ripcord-api.conf':
