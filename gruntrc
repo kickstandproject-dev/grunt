@@ -21,6 +21,10 @@ export FACTER_fastdraw_branch=${FACTER_fastdraw_branch:-master}
 export FACTER_ripcord_repo=${FACTER_ripcord_repo:-${GIT_BASE}/kickstandproject/ripcord.git}
 export FACTER_ripcord_branch=${FACTER_ripcord_branch:-master}
 
+#  payload service
+export FACTER_payload_repo=${FACTER_payload_repo:-${GIT_BASE}/kickstandproject/payload.git}
+export FACTER_payload_branch=${FACTER_payload_branch:-master}
+
 # wildcard service
 export FACTER_wildcard_repo=${FACTER_wildcard_repo:-${GIT_BASE}/kickstandproject/wildcard.git}
 export FACTER_wildcard_branch=${FACTER_wildcard_branch:-master}
