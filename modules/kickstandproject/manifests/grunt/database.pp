@@ -11,6 +11,12 @@ class kickstandproject::grunt::database {
     require  => Class['mysql::server'],
     user     => 'ripcord',
   }
+
+  mysql::db { 'payload':
+    password => 'payload',
+    require  => Class['mysql::server'],
+    user     => 'payload',
+  }
 }
 
 # vim:sw=2:ts=2:expandtab
