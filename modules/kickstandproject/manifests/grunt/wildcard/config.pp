@@ -42,6 +42,16 @@ class kickstandproject::grunt::wildcard::config {
     target  => '/opt/kickstandproject/wildcard/wildcard/local/local_settings.py.example',
   }
 
+  ini_setting { 'local_settings/KICKSTAND_PAYLOAD_BACKEND':
+    ensure  => present,
+    notify  => Class['apache::service'],
+    path    => '/opt/kickstandproject/wildcard/wildcard/local/local_settings.py',
+    require => File['/opt/kickstandproject/wildcard/wildcard/local/local_settings.py'],
+    section => '',
+    setting => 'KICKSTAND_PAYLOAD_BACKEND',
+    value   => 'True',
+  }
+
   ini_setting { 'local_settings/KICKSTAND_RIPCORD_BACKEND':
     ensure  => present,
     notify  => Class['apache::service'],
