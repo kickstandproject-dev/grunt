@@ -14,6 +14,7 @@ class kickstandproject::grunt::init {
   class { 'kickstandproject::grunt::fastdraw::init': }
   class { 'kickstandproject::grunt::keystone': }
   class { 'kickstandproject::grunt::ripcord::init': }
+  class { 'kickstandproject::grunt::swap':}
   class { 'kickstandproject::grunt::wildcard::init': }
 }
 
