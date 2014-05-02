@@ -1,2 +1,12 @@
-pbr>=0.5.21,<0.7.0
 Babel>=0.9.6
+coverage
+discover
+fixtures>=0.3.12
+hacking>=0.8.0,<0.9
+mock>=1.0
+mox>=0.5.3
+pbr>=0.5.21,<0.7.0
+sphinx>=1.1.2,<1.2
+testrepository>=0.0.17
+testscenarios>=0.4,<0.5
+testtools>=0.9.32,<0.9.35
