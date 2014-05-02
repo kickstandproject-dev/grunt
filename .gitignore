@@ -1,1 +1,14 @@
-.modules
+*.egg
+*.egg-info
+*.pyc
+.coverage
+.modules/*
+.testrepository/*
+.tox
+.venv
+AUTHORS
+build/*
+ChangeLog
+cover/*
+dist/*
+doc/build/*
