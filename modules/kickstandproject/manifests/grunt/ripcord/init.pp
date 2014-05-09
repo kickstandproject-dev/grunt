@@ -5,6 +5,7 @@
 #
 class kickstandproject::grunt::ripcord::init {
   class { 'kickstandproject::grunt::ripcord::config': }
+  class { 'kickstandproject::grunt::ripcord::database': }
   class { 'kickstandproject::grunt::ripcord::install': }
   class { 'kickstandproject::grunt::ripcord::service': }
 }

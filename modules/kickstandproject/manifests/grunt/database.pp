@@ -14,12 +14,6 @@ class kickstandproject::grunt::database(
       },
     }
 
-    mysql::db { 'payload':
-      password => 'payload',
-      require  => Class['mysql::server'],
-      user     => 'payload',
-    }
-
     mysql::db { 'ripcord':
       password => 'ripcord',
       require  => Class['mysql::server'],

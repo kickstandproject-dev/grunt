@@ -17,14 +17,6 @@ export FACTER_backblast_branch=${FACTER_backblast_branch:-master}
 export FACTER_fastdraw_repo=${FACTER_fastdraw_repo:-${GIT_BASE}/kickstandproject/fastdraw.git}
 export FACTER_fastdraw_branch=${FACTER_fastdraw_branch:-master}
 
-# ripcord service
-export FACTER_ripcord_repo=${FACTER_ripcord_repo:-${GIT_BASE}/kickstandproject/ripcord.git}
-export FACTER_ripcord_branch=${FACTER_ripcord_branch:-master}
-
-#  payload service
-export FACTER_payload_repo=${FACTER_payload_repo:-${GIT_BASE}/kickstandproject/payload.git}
-export FACTER_payload_branch=${FACTER_payload_branch:-master}
-
 # wildcard service
 export FACTER_wildcard_repo=${FACTER_wildcard_repo:-${GIT_BASE}/kickstandproject/wildcard.git}
 export FACTER_wildcard_branch=${FACTER_wildcard_branch:-master}
@@ -44,3 +36,19 @@ export FACTER_keystone_grunt_email=${FACTER_keystone_grunt_email:-grunt@localhos
 export FACTER_keystone_grunt_password=${FACTER_keystone_grunt_password:-grunt}
 export FACTER_keystone_grunt_tenant=${FACTER_keystone_grunt_tenant:-grunt}
 export FACTER_keystone_grunt_user=${FACTER_keystone_grunt_user:-grunt}
+
+# payload service
+export FACTER_payload_repo=${FACTER_payload_repo:-${GIT_BASE}/kickstandproject/payload.git}
+export FACTER_payload_branch=${FACTER_payload_branch:-master}
+
+export FACTER_payload_db_name=${FACTER_payload_db_name:-payload}
+export FACTER_payload_db_password=${FACTER_payload_db_password:-payload}
+export FACTER_payload_db_user=${FACTER_payload_db_user:-payload}
+
+# ripcord service
+export FACTER_ripcord_repo=${FACTER_ripcord_repo:-${GIT_BASE}/kickstandproject/ripcord.git}
+export FACTER_ripcord_branch=${FACTER_ripcord_branch:-master}
+
+export FACTER_ripcord_db_name=${FACTER_ripcord_db_name:-ripcord}
+export FACTER_ripcord_db_password=${FACTER_ripcord_db_password:-ripcord}
+export FACTER_ripcord_db_user=${FACTER_ripcord_db_user:-ripcord}
