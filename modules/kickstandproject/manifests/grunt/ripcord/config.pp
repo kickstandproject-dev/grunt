@@ -86,24 +86,10 @@ class kickstandproject::grunt::ripcord::config {
     value   => 'http',
   }
 
-  ini_setting { 'connection':
-    ensure  => present,
-    before  => Exec['ripcord-manage db-sync'],
-    notify  => [
-      Class['kickstandproject::grunt::ripcord::service'],
-      Exec['ripcord-manage db-sync'],
-    ],
-    path    => '/etc/ripcord/ripcord.conf',
-    require => File['/etc/ripcord/ripcord.conf'],
-    section => 'database',
-    setting => 'connection',
-    value   => 'mysql://ripcord:ripcord@localhost/ripcord',
-  }
-
   exec { 'ripcord-manage db-sync':
     notify      => Class['kickstandproject::grunt::ripcord::service'],
     refreshonly => true,
-    require     => Class['kickstandproject::grunt::database'],
+    require     => Class['kickstandproject::grunt::ripcord::database'],
     subscribe   => [
       File['/etc/ripcord/ripcord.conf'],
     ],
