@@ -103,7 +103,7 @@ class kickstandproject::grunt::payload::config {
   exec { 'payload-manage db-sync':
     notify      => Class['kickstandproject::grunt::payload::service'],
     refreshonly => true,
-    require     => Class['kickstandproject::grunt::database'],
+    require     => Class['kickstandproject::grunt::payload::database'],
     subscribe   => [
       File['/etc/payload/payload.conf'],
     ],

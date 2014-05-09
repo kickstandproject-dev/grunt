@@ -103,7 +103,7 @@ class kickstandproject::grunt::ripcord::config {
   exec { 'ripcord-manage db-sync':
     notify      => Class['kickstandproject::grunt::ripcord::service'],
     refreshonly => true,
-    require     => Class['kickstandproject::grunt::database'],
+    require     => Class['kickstandproject::grunt::ripcord::database'],
     subscribe   => [
       File['/etc/ripcord/ripcord.conf'],
     ],

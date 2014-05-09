@@ -5,6 +5,7 @@
 #
 class kickstandproject::grunt::payload::init {
   class { 'kickstandproject::grunt::payload::config': }
+  class { 'kickstandproject::grunt::payload::database': }
   class { 'kickstandproject::grunt::payload::install': }
   class { 'kickstandproject::grunt::payload::service': }
 }
