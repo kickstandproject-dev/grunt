@@ -7,6 +7,7 @@ class kickstandproject::grunt::keystone(
   $db_host = $::keystone_db_host,
   $db_name = $::keystone_db_name,
   $db_password = $::keystone_db_password,
+  $db_type = $::keystone_db_type,
   $db_user = $::keystone_db_user,
   $grunt_email = $::keystone_grunt_email,
   $grunt_password = $::keystone_grunt_password,
@@ -14,18 +15,19 @@ class kickstandproject::grunt::keystone(
   $grunt_user = $::keystone_grunt_user,
 ) {
 
-  $sql_conn = "mysql://${db_user}:${db_password}@${db_host}/${db_name}"
+  $sql_conn = "${db_type}://${db_user}:${db_password}@${db_host}/${db_name}"
 
-  class { '::keystone::db::mysql':
-    dbname   => $db_name,
-    host     => $db_host,
-    password => $db_password,
-    user     => $db_user,
+  if ($db_type == 'mysql') {
+    class { '::keystone::db::mysql':
+      dbname   => $db_name,
+      host     => $db_host,
+      password => $db_password,
+      user     => $db_user,
+    }
   }
 
   class { '::keystone':
     admin_token    => 'ADMIN',
-    require        => Class['::keystone::db::mysql'],
     sql_connection => $sql_conn,
   }->
   class { '::keystone::roles::admin':

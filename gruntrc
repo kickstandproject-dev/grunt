@@ -29,10 +29,15 @@ export FACTER_payload_branch=${FACTER_payload_branch:-master}
 export FACTER_wildcard_repo=${FACTER_wildcard_repo:-${GIT_BASE}/kickstandproject/wildcard.git}
 export FACTER_wildcard_branch=${FACTER_wildcard_branch:-master}
 
+# Base database type
+DATABASE_HOST=${DATABASE_HOST:-127.0.0.1}
+DATABASE_TYPE=${DATABASE_TYPE:-mysql}
+
 # class kickstandproject::grunt::keystone
-export FACTER_keystone_db_host=${FACTER_keystone_db_host:-127.0.0.1}
+export FACTER_keystone_db_host=${FACTER_keystone_db_host:-${DATABASE_HOST}}
 export FACTER_keystone_db_name=${FACTER_keystone_db_name:-keystone}
 export FACTER_keystone_db_password=${FACTER_keystone_db_password:-keystone}
+export FACTER_keystone_db_type=${FACTER_keystone_db_type:-${DATABASE_TYPE}}
 export FACTER_keystone_db_user=${FACTER_keystone_db_user:-keystone}
 
 export FACTER_keystone_grunt_email=${FACTER_keystone_grunt_email:-grunt@localhost}

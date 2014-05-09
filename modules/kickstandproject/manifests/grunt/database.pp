@@ -3,19 +3,28 @@
 #
 # Paul Belanger <paul.belanger@polybeacon.com>
 #
-class kickstandproject::grunt::database {
-  class { 'mysql::server': }
+class kickstandproject::grunt::database(
+  $host = $::database_host,
+  $type = $::database_type,
+) {
+  if ($type == 'mysql') {
+    class { 'mysql::server':
+      config_hash => {
+        'bind_address' => $host,
+      },
+    }
 
-  mysql::db { 'payload':
-    password => 'payload',
-    require  => Class['mysql::server'],
-    user     => 'payload',
-  }
+    mysql::db { 'payload':
+      password => 'payload',
+      require  => Class['mysql::server'],
+      user     => 'payload',
+    }
 
-  mysql::db { 'ripcord':
-    password => 'ripcord',
-    require  => Class['mysql::server'],
-    user     => 'ripcord',
+    mysql::db { 'ripcord':
+      password => 'ripcord',
+      require  => Class['mysql::server'],
+      user     => 'ripcord',
+    }
   }
 }
 
