@@ -86,24 +86,10 @@ class kickstandproject::grunt::payload::config {
     value   => 'http',
   }
 
-  ini_setting { 'payload/database/connection':
-    ensure  => present,
-    before  => Exec['payload-manage db-sync'],
-    notify  => [
-      Class['kickstandproject::grunt::payload::service'],
-      Exec['payload-manage db-sync'],
-    ],
-    path    => '/etc/payload/payload.conf',
-    require => File['/etc/payload/payload.conf'],
-    section => 'database',
-    setting => 'connection',
-    value   => 'mysql://payload:payload@localhost/payload',
-  }
-
   exec { 'payload-manage db-sync':
     notify      => Class['kickstandproject::grunt::payload::service'],
     refreshonly => true,
-    require     => Class['kickstandproject::grunt::database'],
+    require     => Class['kickstandproject::grunt::payload::database'],
     subscribe   => [
       File['/etc/payload/payload.conf'],
     ],
