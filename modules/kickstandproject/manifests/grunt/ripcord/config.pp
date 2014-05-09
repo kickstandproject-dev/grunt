@@ -3,7 +3,13 @@
 #
 # Paul Belanger <paul.belanger@polybeacon.com>
 #
-class kickstandproject::grunt::ripcord::config {
+class kickstandproject::grunt::ripcord::config(
+  $db_host = $::database_host,
+  $db_name = $::ripcord_db_name,
+  $db_password = $::ripcord_db_password,
+  $db_type = $::database_type,
+  $db_user = $::ripcord_db_user,
+) {
   user { 'ripcord':
     ensure     => present,
     home       => '/var/lib/ripcord',
@@ -86,7 +92,7 @@ class kickstandproject::grunt::ripcord::config {
     value   => 'http',
   }
 
-  ini_setting { 'connection':
+  ini_setting { 'ripcord/database/connection':
     ensure  => present,
     before  => Exec['ripcord-manage db-sync'],
     notify  => [
@@ -97,13 +103,13 @@ class kickstandproject::grunt::ripcord::config {
     require => File['/etc/ripcord/ripcord.conf'],
     section => 'database',
     setting => 'connection',
-    value   => 'mysql://ripcord:ripcord@localhost/ripcord',
+    value   => "${db_type}://${db_user}:${db_password}@${db_host}/${db_name}",
   }
 
   exec { 'ripcord-manage db-sync':
     notify      => Class['kickstandproject::grunt::ripcord::service'],
     refreshonly => true,
-    require     => Class['kickstandproject::grunt::database'],
+    require     => Class['kickstandproject::grunt::ripcord::database'],
     subscribe   => [
       File['/etc/ripcord/ripcord.conf'],
     ],

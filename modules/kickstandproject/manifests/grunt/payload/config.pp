@@ -3,7 +3,13 @@
 #
 # Paul Belanger <paul.belanger@polybeacon.com>
 #
-class kickstandproject::grunt::payload::config {
+class kickstandproject::grunt::payload::config(
+  $db_host = $::database_host,
+  $db_name = $::payload_db_name,
+  $db_password = $::payload_db_password,
+  $db_type = $::database_type,
+  $db_user = $::payload_db_user,
+) {
   user { 'payload':
     ensure     => present,
     home       => '/var/lib/payload',
@@ -97,13 +103,13 @@ class kickstandproject::grunt::payload::config {
     require => File['/etc/payload/payload.conf'],
     section => 'database',
     setting => 'connection',
-    value   => 'mysql://payload:payload@localhost/payload',
+    value   => "${db_type}://${db_user}:${db_password}@${db_host}/${db_name}",
   }
 
   exec { 'payload-manage db-sync':
     notify      => Class['kickstandproject::grunt::payload::service'],
     refreshonly => true,
-    require     => Class['kickstandproject::grunt::database'],
+    require     => Class['kickstandproject::grunt::payload::database'],
     subscribe   => [
       File['/etc/payload/payload.conf'],
     ],
