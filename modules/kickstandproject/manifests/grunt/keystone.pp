@@ -4,10 +4,10 @@
 # Paul Belanger <paul.belanger@polybeacon.com>
 #
 class kickstandproject::grunt::keystone(
-  $db_host = $::keystone_db_host,
+  $db_host = $::database_host,
   $db_name = $::keystone_db_name,
   $db_password = $::keystone_db_password,
-  $db_type = $::keystone_db_type,
+  $db_type = $::database_type,
   $db_user = $::keystone_db_user,
   $grunt_email = $::keystone_grunt_email,
   $grunt_password = $::keystone_grunt_password,
@@ -21,6 +21,12 @@ class kickstandproject::grunt::keystone(
     class { '::keystone::db::mysql':
       dbname   => $db_name,
       host     => $db_host,
+      password => $db_password,
+      user     => $db_user,
+    }
+  } else {
+    class { '::keystone::db::postgresql':
+      dbname   => $db_name,
       password => $db_password,
       user     => $db_user,
     }
