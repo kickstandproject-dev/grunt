@@ -13,6 +13,12 @@ class kickstandproject::grunt::database(
         'bind_address' => $host,
       },
     }
+  } else {
+    class { 'postgresql::server':
+      config_hash => {
+        'listen_addresses' => $host,
+      },
+    }
   }
 }
 
