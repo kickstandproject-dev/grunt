@@ -17,6 +17,11 @@ class kickstandproject::grunt::payload::database(
       password => $db_password,
       user     => $db_user,
     }
+  } else {
+    postgresql::db { $db_name:
+      password => $db_password,
+      user     => $db_user,
+    }
   }
 }
 
