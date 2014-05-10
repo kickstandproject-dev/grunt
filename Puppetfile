@@ -23,6 +23,10 @@ mod 'puppetlabs/mysql',
   :git => 'git://github.com/puppetlabs/puppetlabs-mysql.git',
   :ref => '0.6.1'
 
+mod 'puppetlabs/postgresql',
+  :git => 'git://github.com/puppetlabs/puppetlabs-postgresql.git',
+  :ref => '2.5.0'
+
 mod 'puppetlabs/stdlib',
   :git => 'git://github.com/puppetlabs/puppetlabs-stdlib.git',
   :ref => '4.1.0'
