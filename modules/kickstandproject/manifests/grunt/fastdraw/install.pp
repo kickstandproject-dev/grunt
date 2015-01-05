@@ -20,6 +20,11 @@ class kickstandproject::grunt::fastdraw::install(
     refreshonly => true,
     require     => Class[kickstandproject::grunt::dependencies],
   }
+
+  file { '/etc/init/fastdraw-notification.conf':
+    ensure => file,
+    source => 'puppet:///modules/kickstandproject/fastdraw/etc/init/fastdraw-notification.conf',
+  }
 }
 
 # vim:sw=2:ts=2:expandtab

@@ -3,7 +3,13 @@
 #
 # Paul Belanger <paul.belanger@polybeacon.com>
 #
-class kickstandproject::grunt::fastdraw::config {
+class kickstandproject::grunt::fastdraw::config(
+  $db_host = $::database_host,
+  $db_name = $::fastdraw_db_name,
+  $db_password = $::fastdraw_db_password,
+  $db_type = $::database_type,
+  $db_user = $::fastdraw_db_user,
+) {
   user { 'fastdraw':
     ensure     => present,
     home       => '/var/lib/fastdraw',
@@ -23,6 +29,28 @@ class kickstandproject::grunt::fastdraw::config {
       User['fastdraw'],
     ],
   }
+
+  file { '/etc/fastdraw/fastdraw.conf':
+    ensure  => link,
+    group   => 'fastdraw',
+    mode    => '0644',
+    notify  => Class['kickstandproject::grunt::fastdraw::service'],
+    owner   => 'fastdraw',
+    require => [
+      File['/etc/fastdraw'],
+    ],
+    target  => '/opt/kickstandproject/fastdraw/etc/fastdraw/fastdraw.conf.sample',
+  }
+
+  exec { 'fastdraw-manage db-sync':
+    notify      => Class['kickstandproject::grunt::fastdraw::service'],
+    refreshonly => true,
+    require     => Class['kickstandproject::grunt::fastdraw::database'],
+    subscribe   => [
+      File['/etc/fastdraw/fastdraw.conf'],
+    ],
+  }
+
 }
 
 # vim:sw=2:ts=2:expandtab
