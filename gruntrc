@@ -13,10 +13,6 @@ GIT_BASE=${GIT_BASE:-https://github.com}
 export FACTER_backblast_repo=${FACTER_backblast_repo:-${GIT_BASE}/kickstandproject/backblast.git}
 export FACTER_backblast_branch=${FACTER_backblast_branch:-master}
 
-# fastdraw service
-export FACTER_fastdraw_repo=${FACTER_fastdraw_repo:-${GIT_BASE}/kickstandproject/fastdraw.git}
-export FACTER_fastdraw_branch=${FACTER_fastdraw_branch:-master}
-
 # wildcard service
 export FACTER_wildcard_repo=${FACTER_wildcard_repo:-${GIT_BASE}/kickstandproject/wildcard.git}
 export FACTER_wildcard_branch=${FACTER_wildcard_branch:-master}
@@ -34,6 +30,14 @@ export FACTER_keystone_grunt_email=${FACTER_keystone_grunt_email:-grunt@localhos
 export FACTER_keystone_grunt_password=${FACTER_keystone_grunt_password:-grunt}
 export FACTER_keystone_grunt_tenant=${FACTER_keystone_grunt_tenant:-grunt}
 export FACTER_keystone_grunt_user=${FACTER_keystone_grunt_user:-grunt}
+
+# fastdraw service
+export FACTER_fastdraw_repo=${FACTER_fastdraw_repo:-${GIT_BASE}/kickstandproject/fastdraw.git}
+export FACTER_fastdraw_branch=${FACTER_fastdraw_branch:-master}
+
+export FACTER_fastdraw_db_name=${FACTER_fastdraw_db_name:-fastdraw}
+export FACTER_fastdraw_db_password=${FACTER_fastdraw_db_password:-fastdraw}
+export FACTER_fastdraw_db_user=${FACTER_fastdraw_db_user:-fastdraw}
 
 # payload service
 export FACTER_payload_repo=${FACTER_payload_repo:-${GIT_BASE}/kickstandproject/payload.git}

@@ -5,7 +5,9 @@
 #
 class kickstandproject::grunt::fastdraw::init {
   class { 'kickstandproject::grunt::fastdraw::config': }
+  class { 'kickstandproject::grunt::fastdraw::database': }
   class { 'kickstandproject::grunt::fastdraw::install': }
+  class { 'kickstandproject::grunt::fastdraw::service': }
 }
 
 # vim:sw=2:ts=2:expandtab
