@@ -11,6 +11,10 @@ mod 'puppetlabs/apt',
   :git => 'git://github.com/puppetlabs/puppetlabs-apt.git',
   :ref => '1.4.2'
 
+mod 'puppetlabs/ceilometer',
+  :git => 'git://github.com/stackforge/puppet-ceilometer.git',
+  :ref => 'stable/havana'
+
 mod 'puppetlabs/keystone',
   :git => 'git://github.com/stackforge/puppet-keystone.git',
   :ref => 'stable/havana'
