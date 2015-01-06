@@ -9,6 +9,7 @@ class kickstandproject::grunt::init {
   }
 
   class { 'kickstandproject::grunt::backblast::init': }
+  class { 'kickstandproject::grunt::ceilometer::init': }
   class { 'kickstandproject::grunt::database': }
   class { 'kickstandproject::grunt::dependencies': }
   class { 'kickstandproject::grunt::fastdraw::init': }
