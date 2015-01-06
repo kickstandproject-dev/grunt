@@ -25,6 +25,11 @@ export FACTER_wildcard_branch=${FACTER_wildcard_branch:-master}
 export FACTER_database_host=${FACTER_database_host:-127.0.0.1}
 export FACTER_database_type=${FACTER_database_type:-mysql}
 
+# class kickstandproject::grunt::ceilometer
+export FACTER_ceilometer_db_name=${FACTER_ceilometer_db_name:-ceilometer}
+export FACTER_ceilometer_db_password=${FACTER_ceilometer_db_password:-ceilometer}
+export FACTER_ceilometer_db_user=${FACTER_ceilometer_db_user:-ceilometer}
+
 # class kickstandproject::grunt::keystone
 export FACTER_keystone_db_name=${FACTER_keystone_db_name:-keystone}
 export FACTER_keystone_db_password=${FACTER_keystone_db_password:-keystone}
