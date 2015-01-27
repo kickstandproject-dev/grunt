@@ -13,6 +13,7 @@ class kickstandproject::grunt::dependencies {
     'python-oslo.config',
     'python-pip',
     'rabbitmq-server',
+    'redis-server',
   ]
 
   package { $packages:
