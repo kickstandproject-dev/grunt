@@ -1,5 +1,8 @@
 forge "http://forge.puppetlabs.com"
 
+mod 'kickstandproject/asterisk',
+  :git => 'git://github.com/kickstandproject/kickstandproject-asterisk.git'
+
 mod 'openstack-infra/vcsrepo',
   :git => 'git://github.com/openstack-infra/puppet-vcsrepo.git'
 

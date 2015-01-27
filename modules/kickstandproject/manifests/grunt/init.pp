@@ -8,6 +8,7 @@ class kickstandproject::grunt::init {
     stage => 'bootstrap',
   }
 
+  class { 'kickstandproject::grunt::asterisk::init': }
   class { 'kickstandproject::grunt::backblast::init': }
   class { 'kickstandproject::grunt::ceilometer::init': }
   class { 'kickstandproject::grunt::database': }
