@@ -1,0 +1,10 @@
+[<%= name %>]
+<%- settings_real.sort.each do |key,val| -%>
+<%= key %> = <%= val %>
+<%- end -%>
+
+<%- members.sort.each do |val| -%>
+member => <%= val %>
+<%- end -%>
+
+#tryinclude "queues.conf.d/includes/<%= name %>/*.conf"

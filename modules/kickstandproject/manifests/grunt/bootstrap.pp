@@ -31,6 +31,12 @@ class kickstandproject::grunt::bootstrap(
     release     => 'precise-updates/havana',
     repos       => 'main',
   }
+
+  apt::source { 'ksp-apus-unstable':
+    key      => '5DBF1F7B',
+    repos    => 'main',
+    location => 'http://ppa.launchpad.net/ksp-apus/unstable/ubuntu',
+  }
 }
 
 # vim:sw=2:ts=2:expandtab
