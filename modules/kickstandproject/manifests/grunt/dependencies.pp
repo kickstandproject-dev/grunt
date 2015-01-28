@@ -4,6 +4,9 @@
 # Paul Belanger <paul.belanger@polybeacon.com>
 #
 class kickstandproject::grunt::dependencies {
+
+  class { '::rabbitmq': }
+
   $packages = [
     'build-essential',
     'libffi-dev',
@@ -12,7 +15,6 @@ class kickstandproject::grunt::dependencies {
     'python-dev',
     'python-oslo.config',
     'python-pip',
-    'rabbitmq-server',
     'redis-server',
   ]
 
