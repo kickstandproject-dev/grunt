@@ -37,6 +37,11 @@ class kickstandproject::grunt::bootstrap(
     repos    => 'main',
     location => 'http://ppa.launchpad.net/ksp-apus/unstable/ubuntu',
   }
+
+  host { 'grunt':
+    ensure => present,
+    ip     => '127.0.0.1',
+  }
 }
 
 # vim:sw=2:ts=2:expandtab
